@@ -1,0 +1,36 @@
+<head>
+  <link rel="stylesheet" href="app.component.css" />
+</head>
+<nav class="navbar navbar-expand-sm  bg-dark">
+    <ul class = "navbar-nav">
+      <li class = "nav-item">
+       <a *ngIf ="loginpageService.isUserLoggedIn()" routerLink="/airlines" class="nav-link">Airline List</a>
+           </li>
+      <li class = "nav-item">
+      <a *ngIf="loginpageService.isUserLoggedIn()" routerLink="/create-airline" class="nav-link">Add Airline</a>
+          </li>
+          <li>
+      <a *ngIf="!loginpageService.isUserLoggedIn()" routerLink="/login-page" class="nav-link">Login</a>
+          </li>
+          
+		      <li>
+      <a *ngIf="loginpageService.isUserLoggedIn()" routerLink="/profile-card" class="nav-link">ProfileCard</a>
+          </li>
+          <li>
+            <a *ngIf="loginpageService.isUserLoggedIn()" routerLink="/contact" class="nav-link">Contact</a>
+                </li>
+             <li>
+              <a *ngIf="loginpageService.isUserLoggedIn()" routerLink="/feedback" class="nav-link">FeedBack</a>
+               </li>
+          <li>
+      <a  *ngIf="loginpageService.isUserLoggedIn()"  routerLink="/logout" class="nav-link">LogOut</a>
+           </li>
+          
+      
+  </ul>
+</nav>
+<h1 style="font-size: x-large;" class="text-center"> {{title}} </h1>
+<div class = "container">
+  
+  <router-outlet></router-outlet>
+</div>

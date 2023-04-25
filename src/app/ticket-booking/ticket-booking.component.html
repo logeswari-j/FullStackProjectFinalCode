@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+        background-image: url('/assets/images/aviation.jpg');
+        position: absolute;
+    width: 100%;
+   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    left: 0px;
+          }
+          .form-control{
+            text-decoration:hotpink;
+          }
+          .form-group{
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 2px 2px 5px red;
+          }
+    </style>
+</head>
+<body>
+<div class="col-md-6 offset-md-3">
+    <h3> Update Airline </h3>
+    <form>
+        <div class="form-group">
+            <label> AirlineName</label>
+            <input type="text" class ="form-control" id = "airlineName"
+                [(ngModel)] = "airline.airlineName" name = "airlineName" readonly placeholder="Enter The AirlineName">
+        </div>
+
+        <div class="form-group">
+            <label> Source</label>
+            <input type="text" class ="form-control" id = "source"
+                [(ngModel)] = "airline.source" name = "source"    readonly   placeholder="Enter The Source">
+        </div>
+
+        <div class="form-group">
+            <label> destination</label>
+            <input type="text" class ="form-control" id = "destination"
+                [(ngModel)] = "airline.destination" name = "destination"  readonly placeholder=" Enter The Destination">
+        </div>
+
+        <div class="form-group">
+            <label> Cost</label>
+            <input type="text" class ="form-control" id = "cost"
+                [(ngModel)] = "airline.cost" name = "cost" readonly placeholder="Enter The Cost">
+        </div>
+
+        <div class="form-group">
+            <label> SeatingCapacity</label>
+            <input type="text" class ="form-control" id = "seatingCapacity"
+                [(ngModel)] = "airline.seatingCapacity" readonly name = "seatingCapacity" placeholder="Enter The SeatingCapacity">
+        </div>
+
+        <div class="form-group">
+            <label><b>How many seats you want?</b></label> 
+          <input  type="number" class ="form-control" id = "noOfSeats"   tabindex="0" 
+              [(ngModel)] = "airline.noOfSeats" name = "noOfSeats" placeholder="Enter seats" required minlength="3" maxlength="10" >
+      </div>
+
+      <button class = "btn btn-outline-primary"  style="margin-left: 170px;" (click)="myFunction()">calculate</button>
+      
+      <div class="form-group">
+        <label><b>Total Price</b></label> 
+      <input type="number" class ="form-control" id = "calculatedCost"   tabindex="0" 
+          [(ngModel)] = "airline.calculatedCost" name = "calculatedCost" readonly required minlength="3" maxlength="20" size="10" >
+  </div>
+
+        <button (click)="proceedPayment()" class = "btn btn-success" >Submit</button>
+
+    </form>
+    </div> 
+    
+</body>
+</html>

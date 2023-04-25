@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+    body{
+    background-image: url('/assets/images/aviation.jpg');
+    position: absolute;
+    width: 100%;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    left: 0px;
+      }
+      *{
+        text-decoration-color: darkred;
+      }
+      thead{
+        font-family: Arial, Helvetica,sans-serif;
+        text-shadow: 2px 2px 5px yellow;
+        
+      }
+      .btn-outline-primary{
+        color: rgb(239, 229, 222);
+        background-color: rgb(154, 9, 173);
+        font-family: Arial, Helvetica,sans-serif;
+        
+      }
+</style>
+</head>
+
+  <body>
+   
+<div class="list row">
+    <div class="col-md-5">
+        <div class="input-group mb-3" style="margin-left: 180px; margin-top: 30px;">
+        <input type="text" class="form-control"
+         placeholder="Search by AirlineName " 
+         [(ngModel)] = "airlineName"/>
+        <div class="input-group-append">
+           
+            <button class="btn btn-outline-secondary" 
+            type="button" (click)="searchByName()" style="color: black;" align="center">
+            Search</button>
+         
+        </div>
+        </div>
+        
+    </div>
+</div>
+<p align="right">
+<button class="btn btn-outline-primary" type="button" (click)="fetchInternationalAirline()" >
+    InternationalFlight
+</button>
+<button class="btn btn-outline-primary" type="button" (click)="fetchDomesticAirline()" style="margin-left: 10px" >
+DomesticFlight
+</button>  
+</p>
+<h2> Airline List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> AirlineName </th>
+            <th> Source</th>
+            <th> Destination </th>
+            <th> Cost </th>
+            <th> SeatingCapacity</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor = "let airline of airlines" >
+            <td> {{ airline.airlineName }} </td>
+            <td> {{ airline.source }} </td>
+            <td> {{ airline.destination }}</td>
+            <td> {{ airline.cost }}</td>
+            <td> {{ airline.seatingCapacity }}
+                <button (click) = "updateAirline(airline.airlineId)" class = "btn btn-info"> Update</button>
+              <!--  <button (click) = "deleteAirline(airline.airlineId)"  class = "btn btn-danger" style="margin-left: 10px"> Delete </button>-->
+                <button (click) = "confrimDelete(airline)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+                <button (click) = "airlineDetails(airline.airlineId)"class = "btn btn-info" style="margin-left: 10px"> View</button>
+                <button (click) = "ticketBookingAirlines(airline.airlineId)"  class = "btn btn-danger" style="margin-left: 10px"> Booking </button>
+                
+           </td>
+            <tr *ngIf="airlines.length !== 0">
+              <button (click)=" confirmDeleteAll()" class="m-3 btn btn-sm btn-danger"   style="margin-left: 10px"> Remove All</button>
+          </tr>
+          <tr scope="row" *ngIf="airlines.length === 0">
+             <td colspan="4" class="text-center" >No record found!...</td>
+          </tr>
+    </tbody>
+ 
+</table>
+</body>
+
+</html>

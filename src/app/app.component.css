@@ -1,0 +1,11 @@
+.navbar-nav{
+    text-shadow: 2px 2px 5px darkviolet;
+    font-size: x-large;
+  }
+ 
+  .li ngIf{
+     border-top-right-radius:1vb;
+  }
+  .text-center h1{
+      text-shadow: lawngreen;
+  }

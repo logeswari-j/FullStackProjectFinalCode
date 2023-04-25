@@ -1,0 +1,55 @@
+* {box-sizing: border-box;
+   box-align: center;
+}
+
+
+
+/* Style the input container */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  
+}
+
+/* Style the form icons */
+.icon {
+  padding: 10px;
+  background: rgb(5, 23, 4);
+  color: rgb(40, 186, 24);
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Style the input fields */
+.input-field {
+  width: 20%;
+  padding: 10px;
+  outline: none;
+
+}
+
+.telno{
+  width: 20%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: navy;
+  color: rgb(255, 255, 255);
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 24%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
